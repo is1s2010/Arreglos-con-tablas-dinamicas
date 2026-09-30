@@ -110,12 +110,35 @@ button:hover {
     background-color: var(--btn-primary-hover);
 }
 
-/* Clases para los botones dentro de la tabla (asumiendo que las agregas con JS) */
-.btn-eliminar { background-color: var(--btn-danger); padding: 8px 12px; font-size: 0.9rem;}
-.btn-eliminar:hover { background-color: var(--btn-danger-hover); }
+/* =========================================
+   BOTONES Y CORRECCIÓN DE EMOJIS EN MÓVILES
+========================================= */
+.btn-eliminar { 
+    background-color: var(--btn-danger); 
+    padding: 8px 12px; 
+    font-size: 0.9rem;
+}
+.btn-eliminar:hover { 
+    background-color: var(--btn-danger-hover); 
+}
 
-.btn-mover { background-color: var(--btn-success); padding: 8px 12px; font-size: 0.9rem;}
-.btn-mover:hover { background-color: var(--btn-success-hover); }
+.btn-mover { 
+    background-color: var(--btn-success); 
+    padding: 8px 12px; 
+    font-size: 1.1rem; /* Un poco más grande para que la flecha se vea clara */
+    
+    /* 1. Fuerza al navegador móvil a mostrarlo como texto, no como emoji */
+    font-variant-emoji: text; 
+    
+    /* 2. Prioriza fuentes de símbolos del sistema por encima de las fuentes de emojis */
+    font-family: "Apple Symbols", "Segoe UI Symbol", "Noto Sans Symbol", sans-serif;
+    
+    /* 3. Asegura que el color de la flecha sea blanco y no el predeterminado del celular */
+    color: #ffffff; 
+}
+.btn-mover:hover { 
+    background-color: var(--btn-success-hover); 
+}
 
 /* =========================================
    TABLAS (DISEÑO Y ESTRUCTURA)
